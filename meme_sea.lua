@@ -395,7 +395,7 @@ if not _env.LoadedFarm then
 end
 
 local templatelib = loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisPresent/test/main/src"))()
-local Window = templatelib:MakeWindow({ Title = "TH-VPN : Meme Sea [แปลไทย]", SubTitle = "ผู้แปล : ปัณณวิชญ์ นารีเดช", SaveFolder = "Thailand-MemeSea.json" })
+local Window = templatelib:MakeWindow({ Title = "DevHub : Meme Sea [แปลไทย]", SubTitle = "ผู้แปล : ปัณณวิชญ์ นารีเดช", SaveFolder = "Thailand-MemeSea.json" })
 Window:AddMinimizeButton({
   Button = { Image = "rbxassetid://13756967934", BackgroundTransparency = 0 },
   Corner = { CornerRadius = UDim.new(0, 6) }
