@@ -20,6 +20,6 @@ GameName = GameInfo.GameName
 print(GameName)   
 
 loadstring(Scriptf)()
-elseif GameInfo == false then
+elseif GameInfo == true then
     print("Script > Game Not Support ✓")
 end
