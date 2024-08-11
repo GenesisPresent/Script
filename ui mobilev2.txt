@@ -1,0 +1,106 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Maikderninja/Maikderninja/main/Test.lua"))();
+local Window = Library.CreateLib("DevHub", "DarkTheme")
+
+local UserInputService = game:GetService("UserInputService")
+local lockerArray = {}
+local livingMonsterTP = false
+local generatorArray = {}
+local fixedGeneratorArray = {}
+local monstersArray = {}
+local moneyArray = {}
+local keycards = {}
+local moneyFarmEnable = false
+local monsterTpEnable = false
+local keyCardESPObjects = {}
+local monstersESPObjects = {}
+local generatorESPObjects = {}
+local detectedMonsters = {}
+local localDoor = {}
+local doorsESPObjects = {}
+local doorArray = {}
+local itemsArray = {}
+local itemsESPObjects = {}
+local monstersEnabled = false
+local monsterLockerEnabled = false
+local searchLightEnabled = false
+local squiddleEnabled = false
+local keyCardEnabled = false
+local generatorEnabled = false
+local itemEnabled = false
+local doorEnabled = false
+local previousDoorESP  = nil 
+local monsterLocker = {}
+local squiddles = {}
+local render = false
+local tempDoor = nil
+
+local Tab = Window:NewTab("Main")
+local Section = Tab:NewSection("😎")
+
+Section:NewToggle("ToggleText", "ToggleInfo", function(Fullbright)
+    if Fullbright then
+        game.Lighting.Brightness = 2
+        game.Lighting.GlobalShadows = false
+        game.Lighting.Ambient = Color3.fromRGB(255, 255, 255)
+    else
+        game.Lighting.Brightness = 1
+        game.Lighting.GlobalShadows = true
+        game.Lighting.Ambient = Color3.fromRGB(127, 127, 127)
+    end
+end)
+
+Section:NewToggle("ToggleText", "ToggleInfo", function(DoorESP)
+    if DoorESP then
+        doorEnabled = true
+        render = true
+        while Options.DoorESP.Value do
+            local preLastDoor = doorArray[#doorArray - 1]
+
+            if preLastDoor then
+                if not preLastDoor:FindFirstChild("Door_ESP") then
+                    local espObjects = createBillboard(preLastDoor, "Door", 2, Color3.fromRGB(255, 255, 255), "Door_ESP", .5, 5)
+                    table.insert(doorsESPObjects, espObjects)
+                end
+                
+                if previousDoorESP and previousDoorESP ~= preLastDoor then
+                    local oldESP = previousDoorESP:FindFirstChild("Door_ESP")
+                    if oldESP then
+                        oldESP:Destroy()
+                    end
+                end
+
+                previousDoorESP = preLastDoor
+            end
+
+            task.wait(1)
+        end
+    else
+    else
+        doorEnabled = false
+        removeDoorsESP()
+    end
+end)
+ 
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "ScreenGui"
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ResetOnSpawn = true
+ 
+local Toggle = Instance.new("TextButton")
+Toggle.Name = "Toggle"
+Toggle.Parent = ScreenGui
+Toggle.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Toggle.Position = UDim2.new(0.15, 0.15)
+Toggle.Size = UDim2.new(0.03, 20, 0.03, 20)
+Toggle.Font = Enum.Font.SourceSans
+Toggle.Text = "UI"
+Toggle.TextColor3 = Color3.fromRGB(248, 248, 248)
+Toggle.TextSize = 35.000
+Toggle.Draggable = true
+Toggle.MouseButton1Click:connect(function()
+    Library:ToggleUI()
+end)
+ 
+local Corner = Instance.new("UICorner")
+Corner.Name = "Corner"
+Corner.Parent = Toggle
