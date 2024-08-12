@@ -11,3 +11,12 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisPresent/Script
 ```
 loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisPresent/Script/main/ui%20mobilev2.txt"))()
 ```
+# tool script
+
+```
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisPresent/Script/main/dexmobile.lua"))()
+```
+
+```
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisPresent/Script/main/spymobile.lua"))()
+```
