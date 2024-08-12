@@ -37,6 +37,31 @@ local squiddles = {}
 local render = false
 local tempDoor = nil
 
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "ScreenGui"
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ResetOnSpawn = true
+ 
+local Toggle = Instance.new("TextButton")
+Toggle.Name = "Toggle"
+Toggle.Parent = ScreenGui
+Toggle.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Toggle.Position = UDim2.new(0.15, 0.15)
+Toggle.Size = UDim2.new(0.03, 20, 0.03, 20)
+Toggle.Font = Enum.Font.SourceSans
+Toggle.Text = "UI"
+Toggle.TextColor3 = Color3.fromRGB(248, 248, 248)
+Toggle.TextSize = 35.000
+Toggle.Draggable = true
+Toggle.MouseButton1Click:connect(function()
+    Library:ToggleUI()
+end)
+ 
+local Corner = Instance.new("UICorner")
+Corner.Name = "Corner"
+Corner.Parent = Toggle
+
+
 local Window = Fluent:CreateWindow({
     Title = "WT | Pressure",
     SubTitle = "cracked by 25ms",
@@ -951,27 +976,3 @@ Fluent:Notify({
 })
 
 SaveManager:LoadAutoloadConfig()
-
-local ScreenGui = Instance.new("ScreenGui")
-ScreenGui.Name = "ScreenGui"
-ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-ScreenGui.ResetOnSpawn = true
- 
-local Toggle = Instance.new("TextButton")
-Toggle.Name = "Toggle"
-Toggle.Parent = ScreenGui
-Toggle.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Toggle.Position = UDim2.new(0.15, 0.15)
-Toggle.Size = UDim2.new(0.03, 20, 0.03, 20)
-Toggle.Font = Enum.Font.SourceSans
-Toggle.Text = "UI"
-Toggle.TextColor3 = Color3.fromRGB(248, 248, 248)
-Toggle.TextSize = 35.000
-Toggle.Draggable = true
-Toggle.MouseButton1Click:connect(function()
-    Library:ToggleUI()
-end)
- 
-local Corner = Instance.new("UICorner")
-Corner.Name = "Corner"
-Corner.Parent = Toggle
