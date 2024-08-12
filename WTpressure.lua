@@ -967,7 +967,14 @@ Toggle.TextColor3 = Color3.fromRGB(248, 248, 248)
 Toggle.TextSize = 35.000
 Toggle.Draggable = true
 Toggle.MouseButton1Click:connect(function()
-    Library:MinimizeKeybind = MenuKeybind
+    local MenuKeybind = section:AddKeybind("MenuKeybind", { Title = "Minimize Bind", Default = Settings.MenuKeybind })
+		MenuKeybind:OnChanged(function()
+			Settings.MenuKeybind = MenuKeybind.LeftControl
+            InterfaceManager:SaveSettings()
+		end)
+		Library.MinimizeKeybind = MenuKeybind
+    end
+end
 end)
  
 local Corner = Instance.new("UICorner")
