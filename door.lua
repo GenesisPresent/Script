@@ -835,45 +835,10 @@ setFullbright(Options.Fullbright.Value)
 
 -- tab 1
 
-tab1.newToggle("Enable Aimbot", "Toggle! Default => Humanoid", false, function(ValueAimbot)
-    aimbotEnabled = ValueAimbot
+tab1.newToggle("DoorESP", "Toggle! Default => Humanoid", false, function(ValueDoorESP)
+    aimbotEnabled = ValueDoorESP
 		if aimbotEnabled then
-			aimAtTarget()
+			DoorESP()
 		end
 end)
 
-tab1.newButton("Switch Aim Part", "Toggle! => Humanoid , Head", function()
-        if aimAtPart == "HumanoidRootPart" then
-			aimAtPart = "Head"
-		else
-			aimAtPart = "HumanoidRootPart"
-		end
-end)
-
-tab1.newToggle("Enable Wall Check", "Toggle!", false, function(ValueWallCheck)
-    wallCheckEnabled = ValueWallCheck
-end)
-
-tab1.newToggle("Enable Target NPCs", "Toggle!", false, function(ValueNPCs)
-    targetNPCs = ValueNPCs
-end)
-
-tab1.newToggle("Enable Team Check", "Toggle!", false, function(ValueTeamCheck)
-    teamCheckEnabled = ValueTeamCheck
-end)
-
-tab1.newToggle("Resize Heads", "Toggle! => Size : 5", false, function(ValueHeads)
-    headSizeEnabled = ValueHeads
-		if headSizeEnabled then
-			resizeHeads()
-		end
-end)
-
-tab1.newToggle("Enable ESP", "Toggle!", false, function(ValueESP)
-    espEnabled = ValueESP
-		if espEnabled then
-			createESP()
-		else
-			removeESP()
-		end
-end)
