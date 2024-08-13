@@ -2490,7 +2490,7 @@ end
 
 -- tab 1
 
-tab1.newDropdown("Dropdown", "Select Fast Attack!", {"Normal Attack", "Fast Attack", "Super Fast Attack"}, function(selectedOption)
+tab1.newDropdown("Fast Attack", "Select Fast Attack!", {"Normal Attack", "Fast Attack", "Super Fast Attack"}, function(selectedOption)
     _G.FastAttackFaiFao_Mode = selectedOption
 	if _G.FastAttackFaiFao_Mode == "Fast Attack" then
 		_G.Fast_Delay = 0.1
@@ -2499,4 +2499,46 @@ tab1.newDropdown("Dropdown", "Select Fast Attack!", {"Normal Attack", "Fast Atta
 	elseif _G.FastAttackFaiFao_Mode == "Super Fast Attack" then
 		_G.Fast_Delay = 0
 	end
+end)
+
+tab1.newDropdown("Weapon", "Select Fast Attack!", {"Melee", "Sword", "Blox Fruit"}, function(selectedOptionWeapon)
+    ChooseWeapon = selectedOptionWeapon
+    task.spawn(function()
+        while wait() do
+            pcall(function()
+                if ChooseWeapon == "Melee" then
+                    for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                        if v.ToolTip == "Melee" then
+                            if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
+                                SelectWeapon = v.Name
+                            end
+                        end
+                    end
+                elseif ChooseWeapon == "Sword" then
+                    for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                        if v.ToolTip == "Sword" then
+                            if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
+                                SelectWeapon = v.Name
+                            end
+                        end
+                    end
+                elseif ChooseWeapon == "Blox Fruit" then
+                    for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                        if v.ToolTip == "Blox Fruit" then
+                            if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
+                                SelectWeapon = v.Name
+                            end
+                        end
+                    end
+                else
+                    for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                        if v.ToolTip == "Melee" then
+                            if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
+                                SelectWeapon = v.Name
+                            end
+                        end
+                    end
+                end
+            end)
+        end
 end)
