@@ -126,10 +126,3 @@ tab1.newToggle("Fullbright", "Toggle!", false, function(Fullbright)
         game.Lighting.Ambient = Color3.fromRGB(127, 127, 127)
     end
 end)
-
-tab1.newSlider("Speed", "Settings Speed Player", 100, false, function(speed)
-    local player = game.Players.LocalPlayer
-        if player and player.Character and player.Character:FindFirstChildOfClass("Humanoid") then
-            player.Character.Humanoid.WalkSpeed = speed
-    end
-end)
