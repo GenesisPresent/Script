@@ -2491,5 +2491,12 @@ end
 -- tab 1
 
 tab1.newDropdown("Dropdown", "Select Fast Attack!", {"Normal Attack", "Fast Attack", "Super Fast Attack"}, function(selectedOption)
-    print(selectedOption)
+    _G.FastAttackFaiFao_Mode = selectedOption
+	if _G.FastAttackFaiFao_Mode == "Fast Attack" then
+		_G.Fast_Delay = 0.1
+	elseif _G.FastAttackFaiFao_Mode == "Normal Attack" then
+		_G.Fast_Delay = 0.15
+	elseif _G.FastAttackFaiFao_Mode == "Super Fast Attack" then
+		_G.Fast_Delay = 0
+	end
 end)
