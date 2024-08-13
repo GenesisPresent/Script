@@ -1,7 +1,6 @@
 local DevHubLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/GenesisPresent/ui/main/DevHub.lua"))()
 local window = DevHubLibrary:Load("DevHub", "Default")
 local tab1 = DevHubLibrary.newTab("Main", "rbxassetid://18705759640")
--- local tab2 = DevHubLibrary.newTab("Farm", "rbxassetid://18705777810")
 
 -- Variables
 local aimbotEnabled = false
@@ -109,7 +108,7 @@ local function resizeHeads()
     local function resizeHead(model)
         local head = model:FindFirstChild("Head")
         if head and head:IsA("BasePart") then
-            head.Size = Vector3.new(5, 5, 5)
+            head.Size = Vector3.new(10, 10, 10)
             head.CanCollide = false
         end
     end
@@ -190,7 +189,20 @@ tab1.newToggle("Enable Wall Check", "Toggle!", false, function(ValueWallCheck)
     wallCheckEnabled = ValueWallCheck
 end)
 
+tab1.newToggle("Enable Target NPCs", "Toggle!", false, function(ValueNPCs)
+    targetNPCs = ValueNPCs
+end)
 
+tab1.newToggle("Enable Team Check", "Toggle!", false, function(ValueTeamCheck)
+    teamCheckEnabled = ValueTeamCheck
+end)
+
+tab1.newToggle("Resize Heads", "Toggle! => Size : 10", false, function(ValueHeads)
+    headSizeEnabled = ValueHeads
+		if headSizeEnabled then
+			resizeHeads()
+		end
+end)
 
 tab1.newToggle("Enable ESP", "Toggle!", false, function(ValueESP)
     espEnabled = ValueESP
