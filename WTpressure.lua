@@ -49,8 +49,8 @@ local Window = Fluent:CreateWindow({
 local Tabs = {
     Main = Window:AddTab({ Title = "Main", Icon = "house-plus" }),
     Visuals = Window:AddTab({ Title = "Visuals", Icon = "eye" }),
-    Teleports = Window:AddTab({ Title = "Teleports", Icon = "map" }),
-    Settings = Window:AddTab({ Title = "Settings", Icon = "settings" })
+    -- Teleports = Window:AddTab({ Title = "Teleports", Icon = "map" }),
+    -- Settings = Window:AddTab({ Title = "Settings", Icon = "settings" })
 }
 
 local Options = Fluent.Options
