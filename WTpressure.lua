@@ -74,7 +74,7 @@ ImageButton.Parent = ScreenGui
 ImageButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 ImageButton.BorderSizePixel = 0
 ImageButton.Position = UDim2.new(0.15, 0.15)
-ImageButton.Size = UDim2.new(0.05, 20, 0.05, 20)
+ImageButton.Size = UDim2.new(0.02, 15, 0.02, 15)
 ImageButton.Draggable = true
 ImageButton.Image = "rbxassetid://13756967934"
 ImageButton.MouseButton1Down:connect(function()
