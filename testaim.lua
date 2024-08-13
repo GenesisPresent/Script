@@ -178,13 +178,18 @@ tab1.newToggle("Enable Aimbot", "Toggle!", false, function(ValueAimbot)
 		end
 end)
 
-tab1.newButton("Switch Aim Part", "Toggle!", function()
+tab1.newButton("Switch Aim Part", "Toggle! => Humanoid , Head", function()
         if aimAtPart == "HumanoidRootPart" then
 			aimAtPart = "Head"
 		else
 			aimAtPart = "HumanoidRootPart"
 		end
 end)
+
+tab1.newToggle("Enable Wall Check", "Toggle!", false, function(ValueWallCheck)
+    wallCheckEnabled = ValueWallCheck
+end)
+
 
 
 tab1.newToggle("Enable ESP", "Toggle!", false, function(ValueESP)
