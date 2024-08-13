@@ -37,7 +37,6 @@ local tempDoor = nil
 
 local Window = Fluent:CreateWindow({
     Title = "DevHub",
-    SubTitle = "[Game] Pressure",
     TabWidth = 160,
     Size = UDim2.fromOffset(500, 320),
     Acrylic = true,
@@ -51,14 +50,14 @@ local Tabs = {
 }
 
 local Options = Fluent.Options
-local FullbrightToggle = Tabs.Visuals:AddToggle("Fullbright", {Title = "Fullbright", Default = true})
-local DoorESP = Tabs.Visuals:AddToggle("DoorESP", { Title = "Doors ESP", Default = false })
-local MonstersESP = Tabs.Visuals:AddToggle("MonstersESP", { Title = "Monsters ESP", Default = false })
-local ItemsESP = Tabs.Visuals:AddToggle("ItemsESP", { Title = "Items ESP", Default = false })
-local KeyCardsESP = Tabs.Visuals:AddToggle("KeyCardsESP", { Title = "Key Cards ESP", Default = false })
-local GeneratorESP = Tabs.Visuals:AddToggle("GeneratorESP", { Title = "Generator ESP", Default = false })
-local DestroySquiddles = Tabs.Visuals:AddToggle("DestroySquiddles", { Title = "Remove Squiddles", Default = false })
-local DestroyMonsterLocker = Tabs.Visuals:AddToggle("DestroyMonsterLocker", { Title = "Remove MonsterLocker", Default = false })
+local FullbrightToggle = Tabs.Visuals:AddToggle("Fullbright", {Title = "(Fullbright)", Default = true})
+local DoorESP = Tabs.Visuals:AddToggle("DoorESP", { Title = "(Doors ESP)", Default = true })
+local MonstersESP = Tabs.Visuals:AddToggle("MonstersESP", { Title = "(Monsters ESP)", Default = true })
+local ItemsESP = Tabs.Visuals:AddToggle("ItemsESP", { Title = "(Items ESP)", Default = true })
+local KeyCardsESP = Tabs.Visuals:AddToggle("KeyCardsESP", { Title = "(Key Cards ESP)", Default = true })
+local GeneratorESP = Tabs.Visuals:AddToggle("GeneratorESP", { Title = "(Generator ESP)", Default = true })
+local DestroySquiddles = Tabs.Visuals:AddToggle("DestroySquiddles", { Title = "(Remove Squiddles)", Default = false })
+local DestroyMonsterLocker = Tabs.Visuals:AddToggle("DestroyMonsterLocker", { Title = "(Remove MonsterLocker)", Default = false })
 -- local MoneyFarm = Tabs.Visuals:AddToggle("MoneyFarm", {Title = "Farm Money", Description = "Hotkey : NumPad 5", Default = false})
 
 local ScreenGui = Instance.new("ScreenGui")
@@ -71,8 +70,8 @@ ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 ImageButton.Parent = ScreenGui
 ImageButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 ImageButton.BorderSizePixel = 0
-ImageButton.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
-ImageButton.Size = UDim2.new(0, 50, 0, 50)
+ImageButton.Position = UDim2.new(0.15, 0.15)
+ImageButton.Size = UDim2.new(0.03, 20, 0.03, 20)
 ImageButton.Draggable = true
 ImageButton.Image = "rbxassetid://13756967934"
 ImageButton.MouseButton1Down:connect(function()
