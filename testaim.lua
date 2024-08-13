@@ -108,7 +108,7 @@ local function resizeHeads()
     local function resizeHead(model)
         local head = model:FindFirstChild("Head")
         if head and head:IsA("BasePart") then
-            head.Size = Vector3.new(10, 10, 10)
+            head.Size = Vector3.new(5, 5, 5)
             head.CanCollide = false
         end
     end
