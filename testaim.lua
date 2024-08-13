@@ -171,16 +171,24 @@ end
 
 -- tab 1
 
-tab1.newToggle("Enable Aimbot", "Toggle!", false, function(Value1)
-    aimbotEnabled = Value1
+tab1.newToggle("Enable Aimbot", "Toggle!", false, function(ValueAimbot)
+    aimbotEnabled = ValueAimbot
 		if aimbotEnabled then
 			aimAtTarget()
 		end
 end)
 
+tab1.newButton("Switch Aim Part", "Toggle!", function()
+        if aimAtPart == "HumanoidRootPart" then
+			aimAtPart = "Head"
+		else
+			aimAtPart = "HumanoidRootPart"
+		end
+end)
 
-tab1.newToggle("Enable ESP", "Toggle!", false, function(Value)
-    espEnabled = Value
+
+tab1.newToggle("Enable ESP", "Toggle!", false, function(ValueESP)
+    espEnabled = ValueESP
 		if espEnabled then
 			createESP()
 		else
