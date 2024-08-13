@@ -72,8 +72,8 @@ end)
 
 -- tab 1
 
-tab1.newToggle("Every Player ESP", "Toggle!", false, function(toggleallplayer)
-     getgenv().AllEsp = toggleallplayer
+tab1.newToggle("Innocent ESP", "Toggle!", false, function(toggleInnocent)
+     getgenv().AllEsp = toggleInnocent
         for _, billboard in ipairs(ESPFolder:GetChildren()) do
             if billboard:IsA("BillboardGui") then
                 local playerName = billboard.Name:sub(1, -10)
@@ -82,7 +82,7 @@ tab1.newToggle("Every Player ESP", "Toggle!", false, function(toggleallplayer)
                     local hasKnife = player.Character:FindFirstChild("Knife") or player.Backpack:FindFirstChild("Knife")
                     local hasGun = player.Character:FindFirstChild("Gun") or player.Backpack:FindFirstChild("Gun")
                     if not (hasKnife or hasGun) then
-                        billboard.Enabled = toggleallplayer
+                        billboard.Enabled = toggleInnocent
                     end
                 end
             end
@@ -115,26 +115,21 @@ tab1.newToggle("sheriff ESP", "Toggle!", false, function(toggleSheriff)
         end
 end)
 
-tab1.newButton("Button", "Prints Hello!", function()
-        local WeaponOwnRange = {
-            min = 999999999,
-            max = 999999999
-        }
-
-        local DataBase, PlayerData = getrenv()._G.Database, getrenv()._G.PlayerData
-
-        local newOwned = {}
-
-        for i, v in next, DataBase.Item do
-            newOwned[i] = math.random(WeaponOwnRange.min, WeaponOwnRange.max) -- newOwned[Weapon]: ItemCount
-        end
-
-        local PlayerWeapons = PlayerData.Weapons
-
-        game:GetService("RunService"):BindToRenderStep("InventoryUpdate", 0, function()
-            PlayerWeapons.Owned = newOwned
-        end)
-
-        game.Players.LocalPlayer.Character.Humanoid.Health = 0
+tab1.newToggle("Fullbright", "Toggle!", false, function(Fullbright)
+    if Fullbright then
+        game.Lighting.Brightness = 2
+        game.Lighting.GlobalShadows = false
+        game.Lighting.Ambient = Color3.fromRGB(255, 255, 255)
+    else
+        game.Lighting.Brightness = 1
+        game.Lighting.GlobalShadows = true
+        game.Lighting.Ambient = Color3.fromRGB(127, 127, 127)
+    end
 end)
 
+tab1.newSlider("Speed", "Settings Speed Player", 100, false, function(speed)
+    local player = game.Players.LocalPlayer
+        if player and player.Character and player.Character:FindFirstChildOfClass("Humanoid") then
+            player.Character.Humanoid.WalkSpeed = speed
+    end
+end)
