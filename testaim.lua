@@ -172,13 +172,10 @@ end
 -- tab 1
 
 tab1.newToggle("Enable Aimbot", "Toggle!", false, function(Value)
-    aimbotEnabled = Value
-    if aimbotEnabled then
-        aimAtTarget()
-	end
-    else
-    aimbotEnabled = Value
-    if aimbotEnabled then
-        aimAtTarget()
-    end
+    espEnabled = Value
+		if espEnabled then
+			createESP()
+		else
+			removeESP()
+		end
 end)
