@@ -73,7 +73,7 @@ end)
 -- tab 1
 
 tab1.newToggle("Toggle", "Toggle! (prints the state)", true, function(toggleState)
-        getgenv().MurderEsp = toggleState
+     getgenv().MurderEsp = toggleState
         for _, billboard in ipairs(ESPFolder:GetChildren()) do
             if billboard:IsA("BillboardGui") then
                 local playerName = billboard.Name:sub(1, -10)
