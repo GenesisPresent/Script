@@ -78,6 +78,14 @@ end)
 
 -- tab 1
 
+tab1.newToggle("Toggle", "Toggle! (prints the state)", true, function(toggleState)
+    if toggleState then
+        print("On")
+    else
+        print("Off")
+    end
+end)
+
 tab1.newToggle("DoorESP", "Toggle! Default => Humanoid", false, function(stateesp)
     	getgenv().MurderEsp = stateesp
         for _, billboard in ipairs(ESPFolder:GetChildren()) do
