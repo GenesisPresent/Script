@@ -46,10 +46,7 @@ local Window = Fluent:CreateWindow({
 })
 
 local Tabs = {
-    Main = Window:AddTab({ Title = "Main", Icon = "house-plus" }),
-    Visuals = Window:AddTab({ Title = "Main", Icon = "rbxassetid://18705759640" }),
-    Teleports = Window:AddTab({ Title = "Teleports", Icon = "map" }),
-    Settings = Window:AddTab({ Title = "Settings", Icon = "settings" })
+    Visuals = Window:AddTab({ Title = "Main", Icon = "rbxassetid://18705759640" })
 }
 
 local Options = Fluent.Options
