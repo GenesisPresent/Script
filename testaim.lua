@@ -171,8 +171,8 @@ end
 
 -- tab 1
 
-tab1.newToggle("Enable Aimbot", "Toggle!", false, function(Value)
-    aimbotEnabled = Value
+tab1.newToggle("Enable Aimbot", "Toggle!", false, function(Value1)
+    aimbotEnabled = Value1
 		if aimbotEnabled then
 			aimAtTarget()
 		end
