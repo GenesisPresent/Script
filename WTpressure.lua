@@ -947,23 +947,10 @@ end)
 
 setFullbright(Options.Fullbright.Value)
 
-SaveManager:SetLibrary(Fluent)
-InterfaceManager:SetLibrary(Fluent)
-
-SaveManager:IgnoreThemeSettings()
-SaveManager:SetIgnoreIndexes({})
-InterfaceManager:SetFolder("FluentScriptHub")
-SaveManager:SetFolder("FluentScriptHub/specific-game")
-
-InterfaceManager:BuildInterfaceSection(Tabs.Settings)
-SaveManager:BuildConfigSection(Tabs.Settings)
-
-Window:SelectTab(1)
-
 Fluent:Notify({
-    Title = "cracked by 25ms | Join Discord",
-    Content = "https://discord.gg/AC85fM4Hp8",
-    Duration = 8
+    Title = "Infinite Hub",
+    Content = "The script has been loaded.",
+    Durtion = 3
 })
+warn("Infinite Hub Loading Completed !!")
 
-SaveManager:LoadAutoloadConfig()
