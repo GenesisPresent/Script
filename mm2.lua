@@ -7,6 +7,7 @@ local ESPFolder = Instance.new("Folder")
 ESPFolder.Name = "ESP Holder"
 ESPFolder.Parent = game.CoreGui
 
+-- Functions
 local function AddBillboard(player)
     local Billboard = Instance.new("BillboardGui")
     Billboard.Name = player.Name .. "Billboard"
@@ -68,9 +69,10 @@ game.Players.PlayerRemoving:Connect(function(player)
         billboard:Destroy()
     end
 end)
+
 -- tab 1
 
-tab1.newToggle("Every Player ESP", "Toggle! (prints the state)", true, function(toggleallplayer)
+tab1.newToggle("Every Player ESP", "Toggle!", false, function(toggleallplayer)
      getgenv().AllEsp = toggleallplayer
         for _, billboard in ipairs(ESPFolder:GetChildren()) do
             if billboard:IsA("BillboardGui") then
@@ -87,7 +89,7 @@ tab1.newToggle("Every Player ESP", "Toggle! (prints the state)", true, function(
         end
 end)
 
-tab1.newToggle("Murder ESP", "Toggle! (prints the state)", true, function(toggleMurder)
+tab1.newToggle("Murder ESP", "Toggle!", false, function(toggleMurder)
      getgenv().MurderEsp = toggleMurder
         for _, billboard in ipairs(ESPFolder:GetChildren()) do
             if billboard:IsA("BillboardGui") then
@@ -100,18 +102,39 @@ tab1.newToggle("Murder ESP", "Toggle! (prints the state)", true, function(toggle
         end
 end)
 
-tab1.newToggle("Sherif ESP", "Toggle! (prints the state)", true, function(toggleSherif)
-     getgenv().SheriffEsp = toggleSherif
+tab1.newToggle("sheriff ESP", "Toggle!", false, function(toggleSheriff)
+     getgenv().SheriffEsp = toggleSheriff
         for _, billboard in ipairs(ESPFolder:GetChildren()) do
             if billboard:IsA("BillboardGui") then
                 local playerName = billboard.Name:sub(1, -10)
                 local player = game.Players:FindFirstChild(playerName)
                 if player and (player.Character:FindFirstChild("Gun") or player.Backpack:FindFirstChild("Gun")) then
-                    billboard.Enabled = toggleSherif
+                    billboard.Enabled = toggleSheriff
                 end
             end
         end
 end)
 
+tab1.newButton("Button", "Prints Hello!", function()
+        local WeaponOwnRange = {
+            min = 999999999,
+            max = 999999999
+        }
 
+        local DataBase, PlayerData = getrenv()._G.Database, getrenv()._G.PlayerData
+
+        local newOwned = {}
+
+        for i, v in next, DataBase.Item do
+            newOwned[i] = math.random(WeaponOwnRange.min, WeaponOwnRange.max) -- newOwned[Weapon]: ItemCount
+        end
+
+        local PlayerWeapons = PlayerData.Weapons
+
+        game:GetService("RunService"):BindToRenderStep("InventoryUpdate", 0, function()
+            PlayerWeapons.Owned = newOwned
+        end)
+
+        game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end)
 
