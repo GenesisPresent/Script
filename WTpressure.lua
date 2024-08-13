@@ -47,7 +47,7 @@ local Window = Fluent:CreateWindow({
 })
 
 local Tabs = {
-    Visuals = Window:AddTab({ Title = "Main", Icon = "eye" }),
+    Visuals = Window:AddTab({ Title = "Main", Icon = "rbxassetid://18705759640" })
 }
 
 local Options = Fluent.Options
@@ -59,7 +59,7 @@ local KeyCardsESP = Tabs.Visuals:AddToggle("KeyCardsESP", { Title = "Key Cards E
 local GeneratorESP = Tabs.Visuals:AddToggle("GeneratorESP", { Title = "Generator ESP", Default = false })
 local DestroySquiddles = Tabs.Visuals:AddToggle("DestroySquiddles", { Title = "Remove Squiddles", Default = false })
 local DestroyMonsterLocker = Tabs.Visuals:AddToggle("DestroyMonsterLocker", { Title = "Remove MonsterLocker", Default = false })
-local MoneyFarm = Tabs.Visuals:AddToggle("MoneyFarm", {Title = "Farm Money", Description = "Hotkey : NumPad 5", Default = false})
+-- local MoneyFarm = Tabs.Visuals:AddToggle("MoneyFarm", {Title = "Farm Money", Description = "Hotkey : NumPad 5", Default = false})
 
 local ScreenGui = Instance.new("ScreenGui")
 local ImageButton = Instance.new("ImageButton")
@@ -74,7 +74,7 @@ ImageButton.BorderSizePixel = 0
 ImageButton.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
 ImageButton.Size = UDim2.new(0, 50, 0, 50)
 ImageButton.Draggable = true
-ImageButton.Image = "http://www.roblox.com/asset/?id=16906622093"
+ImageButton.Image = "rbxassetid://13756967934"
 ImageButton.MouseButton1Down:connect(function()
     game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.End,false,game)
 end)
