@@ -46,7 +46,6 @@ local Window = Fluent:CreateWindow({
 
 local Tabs = {
     Visuals = Window:AddTab({ Title = "Game", Icon = "rbxassetid://18705759640" }),
-    Teleports = Window:AddTab({ Title = "Teleports", Icon = "map" })
 }
 
 local Options = Fluent.Options
@@ -466,56 +465,6 @@ end
 
 
 -- ===========================================
-
-
-Tabs.Teleports:AddButton({
-    Title = "Teleport to Last Room",
-    Description = "Hotkey : NumPad 1",
-    Callback = function()
-        tpToLastRoom()
-    end
-})
-
-Tabs.Teleports:AddButton({
-    Title = "Teleport to Last Room Opened",
-    Description = "Hotkey : NumPad 2",
-    Callback = function()
-        tpToLastRoomOpened()
-    end
-})
-
-Tabs.Teleports:AddButton({
-    Title = "Teleport to Last Locker",
-    Description = "Hotkey : NumPad 3",
-    Callback = function()
-        tpToLastLocker()
-    end
-})
-
-Tabs.Teleports:AddButton({
-    Title = "Teleport to KeyCard",
-    Description = "Hotkey : NumPad 4",
-    Callback = function()
-        tpToKeyCard()
-    end
-})
-
-Tabs.Teleports:AddButton({
-    Title = "Hide From Monsters",
-    Description = "Hotkey : NumPad 7",
-    Callback = function()
-        tpToOUTOFLastRoomOpened()
-    end
-})
-
-Tabs.Teleports:AddButton({
-    Title = "Teleport to Generator",
-    Description = "Hotkey : NumPad 8",
-    Callback = function()
-        tpToGenerator()
-    end
-})
-
 
 local function createBillboard(spawner, EspName, Shape, GuiColor,GUIESPNAME,b_s,t_so)
     local billboardGui = Instance.new("BillboardGui")
