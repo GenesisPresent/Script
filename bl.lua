@@ -2501,8 +2501,8 @@ tab1.newDropdown("Fast Attack", "Select Fast Attack!", {"Normal Attack", "Fast A
 	end
 end)
 
-tab1.newDropdown("Weapon", "Select Fast Attack!", {"Melee", "Sword", "Blox Fruit"}, function(selectedOptionWeapon)
-    ChooseWeapon = selectedOptionWeapon
+tab1.newDropdown("Weapon", "Select Fast Attack!", {"Melee", "Sword", "Blox Fruit"}, function(Idbcjcicb)
+    ChooseWeapon = Idbcjcicb
     task.spawn(function()
         while wait() do
             pcall(function()
