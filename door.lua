@@ -822,16 +822,6 @@ local function setupHotkeys()
     end)
 end
 
-setupHotkeys()
-spawn(checkRenderCondition)
-spawn(doFindAll)
-
-FullbrightToggle:OnChanged(function()
-    setFullbright(Options.Fullbright.Value)
-end)
-
-setFullbright(Options.Fullbright.Value)
-
 
 -- tab 1
 
