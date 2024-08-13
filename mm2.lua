@@ -86,16 +86,5 @@ tab1.newToggle("Toggle", "Toggle! (prints the state)", true, function(toggleStat
     end
 end)
 
-tab1.newToggle("DoorESP", "Toggle! Default => Humanoid", false, function(stateesp)
-    	getgenv().MurderEsp = stateesp
-        for _, billboard in ipairs(ESPFolder:GetChildren()) do
-            if billboard:IsA("BillboardGui") then
-                local playerName = billboard.Name:sub(1, -10)
-                local player = game.Players:FindFirstChild(playerName)
-                if player and (player.Character:FindFirstChild("Knife") or player.Backpack:FindFirstChild("Knife")) then
-                    billboard.Enabled = stateesp
-                end
-            end
-        end
-end)
+
 
