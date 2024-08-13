@@ -36,8 +36,8 @@ local render = false
 local tempDoor = nil
 
 local Window = Fluent:CreateWindow({
-    Title = "WT | Pressure",
-    SubTitle = "cracked by 25ms",
+    Title = "DevHub",
+    SubTitle = "[Game] Pressure",
     TabWidth = 160,
     Size = UDim2.fromOffset(500, 320),
     Acrylic = true,
@@ -51,14 +51,6 @@ local Tabs = {
 }
 
 local Options = Fluent.Options
-
-Fluent:Notify({
-    Title = "cracked by 25ms | Last Update:",
-    Content = "2024-07-25",
-    SubContent = "v2.5",
-    Duration = 5
-})
-
 local FullbrightToggle = Tabs.Visuals:AddToggle("Fullbright", {Title = "Fullbright", Default = true})
 local DoorESP = Tabs.Visuals:AddToggle("DoorESP", { Title = "Doors ESP", Default = false })
 local MonstersESP = Tabs.Visuals:AddToggle("MonstersESP", { Title = "Monsters ESP", Default = false })
