@@ -3,8 +3,6 @@ local window = DevHubLibrary:Load("DevHub", "Default")
 local tab1 = DevHubLibrary.newTab("Main", "rbxassetid://18705759640")
 
 -- Variables
-coroutine.wrap(updateRolesInfo)()
-
 local ESPFolder = Instance.new("Folder")
 ESPFolder.Name = "ESP Holder"
 ESPFolder.Parent = game.CoreGui
