@@ -2490,10 +2490,10 @@ end
 
 -- tab 1
 
-tab1.newDropdown("Dropdown", "Select Fast Attack!", {"Normal Attack", "Fast Attack", "Super Fast Attack"}, function(Value)
+tab1.newDropdown("Dropdown", "Select Fast Attack!", {"Normal Attack", "Fast Attack", "Super Fast Attack"}, function(Valuectycc)
     DropdownDelayAttack:SetValue("Fast Attack")
-    DropdownDelayAttack:OnChanged(function(Value)
-    _G.FastAttackFaiFao_Mode = Value
+    DropdownDelayAttack:OnChanged(function(Valuectycc)
+    _G.FastAttackFaiFao_Mode = Valuectycc
 	if _G.FastAttackFaiFao_Mode == "Fast Attack" then
 		_G.Fast_Delay = 0.1
 	elseif _G.FastAttackFaiFao_Mode == "Normal Attack" then
