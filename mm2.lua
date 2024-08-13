@@ -70,14 +70,44 @@ game.Players.PlayerRemoving:Connect(function(player)
 end)
 -- tab 1
 
-tab1.newToggle("Toggle", "Toggle! (prints the state)", true, function(toggleState)
-     getgenv().MurderEsp = toggleState
+tab1.newToggle("Every Player ESP", "Toggle! (prints the state)", true, function(toggleallplayer)
+     getgenv().AllEsp = toggleallplayer
+        for _, billboard in ipairs(ESPFolder:GetChildren()) do
+            if billboard:IsA("BillboardGui") then
+                local playerName = billboard.Name:sub(1, -10)
+                local player = game.Players:FindFirstChild(playerName)
+                if player and player.Character then
+                    local hasKnife = player.Character:FindFirstChild("Knife") or player.Backpack:FindFirstChild("Knife")
+                    local hasGun = player.Character:FindFirstChild("Gun") or player.Backpack:FindFirstChild("Gun")
+                    if not (hasKnife or hasGun) then
+                        billboard.Enabled = toggleallplayer
+                    end
+                end
+            end
+        end
+end)
+
+tab1.newToggle("Murder ESP", "Toggle! (prints the state)", true, function(toggleMurder)
+     getgenv().MurderEsp = toggleMurder
         for _, billboard in ipairs(ESPFolder:GetChildren()) do
             if billboard:IsA("BillboardGui") then
                 local playerName = billboard.Name:sub(1, -10)
                 local player = game.Players:FindFirstChild(playerName)
                 if player and (player.Character:FindFirstChild("Knife") or player.Backpack:FindFirstChild("Knife")) then
-                    billboard.Enabled = toggleState
+                    billboard.Enabled = toggleMurder
+                end
+            end
+        end
+end)
+
+tab1.newToggle("Sherif ESP", "Toggle! (prints the state)", true, function(toggleSherif)
+     getgenv().SheriffEsp = toggleSherif
+        for _, billboard in ipairs(ESPFolder:GetChildren()) do
+            if billboard:IsA("BillboardGui") then
+                local playerName = billboard.Name:sub(1, -10)
+                local player = game.Players:FindFirstChild(playerName)
+                if player and (player.Character:FindFirstChild("Gun") or player.Backpack:FindFirstChild("Gun")) then
+                    billboard.Enabled = toggleSherif
                 end
             end
         end
