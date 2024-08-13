@@ -61,7 +61,7 @@ local KeyCardsESP = Tabs.Visuals:AddToggle("KeyCardsESP", { Title = "(Key Cards 
 local GeneratorESP = Tabs.Visuals:AddToggle("GeneratorESP", { Title = "(Generator ESP)", Default = false })
 local DestroySquiddles = Tabs.Visuals:AddToggle("DestroySquiddles", { Title = "(Remove Squiddles)", Default = false })
 local DestroyMonsterLocker = Tabs.Visuals:AddToggle("DestroyMonsterLocker", { Title = "(Remove MonsterLocker)", Default = false })
-local MoneyFarm = Tabs.Visuals:AddToggle("MoneyFarm", {Title = "Farm Money", Description = "Hotkey : NumPad 5", Default = false})
+--local MoneyFarm = Tabs.Visuals:AddToggle("MoneyFarm", {Title = "Farm Money", Description = "Hotkey : NumPad 5", Default = false})
 
 local ScreenGui = Instance.new("ScreenGui")
 local ImageButton = Instance.new("ImageButton")
@@ -74,7 +74,7 @@ ImageButton.Parent = ScreenGui
 ImageButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 ImageButton.BorderSizePixel = 0
 ImageButton.Position = UDim2.new(0.15, 0.15)
-ImageButton.Size = UDim2.new(35, 35)
+ImageButton.Size = UDim2.new(0, 35, 0, 35)
 ImageButton.Draggable = true
 ImageButton.Image = "rbxassetid://13756967934"
 ImageButton.MouseButton1Down:connect(function()
