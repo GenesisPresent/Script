@@ -39,10 +39,10 @@ local Window = Fluent:CreateWindow({
     Title = "WT | Pressure",
     SubTitle = "cracked by 25ms",
     TabWidth = 160,
-    Size = UDim2.fromOffset(580, 460),
+    Size = UDim2.fromOffset(500, 320),
     Acrylic = true,
     Theme = "Darker",
-    Transparency = false,
+    Transparency = true,
     MinimizeKey = Enum.KeyCode.End
 })
 
