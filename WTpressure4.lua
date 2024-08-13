@@ -46,7 +46,7 @@ local Window = Fluent:CreateWindow({
 })
 
 local Tabs = {
-    Main = Window:AddTab({ Title = "Main", Icon = "house-plus" }),
+    
     Visuals = Window:AddTab({ Title = "Game", Icon = "rbxassetid://18705759640" }),
     Teleports = Window:AddTab({ Title = "Teleports", Icon = "map" })
 }
@@ -79,47 +79,6 @@ ImageButton.Image = "rbxassetid://13756967934"
 ImageButton.MouseButton1Down:connect(function()
     game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.End,false,game)
 end)
-
-local WalkSpeedSlider = Tabs.Main:AddSlider("WalkSpeedSlider", {
-    Title = "Walk Speed",
-    Description = "Adjust the player's walk speed",
-    Default = 16,
-    Min = 0,
-    Max = 25,
-    Rounding = 1,
-    Callback = function(Value)
-        local player = game.Players.LocalPlayer
-        if player and player.Character and player.Character:FindFirstChildOfClass("Humanoid") then
-            player.Character.Humanoid.WalkSpeed = Value
-        end
-    end
-})
-
-WalkSpeedSlider:OnChanged(function(Value)
-end)
-
-WalkSpeedSlider:SetValue(16)
-
-local FOVSlider = Tabs.Main:AddSlider("FOVSlider", {
-    Title = "FOV",
-    Description = "Adjust the player's field of view",
-    Default = 70,
-    Min = 0,
-    Max = 120,
-    Rounding = 1,
-    Callback = function(Value)
-        local player = game.Players.LocalPlayer
-        if player and player.Character and player.Character:FindFirstChildOfClass("Humanoid") then
-            local camera = game.Workspace.CurrentCamera
-            camera.FieldOfView = Value
-        end
-    end
-})
-
-FOVSlider:OnChanged(function(Value)
-end)
-
-FOVSlider:SetValue(70)
 
 -- ===================================================== SOME READS
 -- MULTI FINDER
