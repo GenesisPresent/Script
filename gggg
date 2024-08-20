@@ -1,0 +1,13 @@
+local players = game:GetService("Players")
+game.StarterGui:SetCore("SendNotification", {
+
+    Title = "💕[DevHub]💕";
+
+    Text = "⚠️ Wait 1-5 seconds for the script to load";
+     
+     Icon = "rbxassetid://110079088405311";
+
+     Duration = 10
+})
+
+loadstring(game:HttpGet(""))()
