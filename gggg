@@ -9,5 +9,3 @@ game.StarterGui:SetCore("SendNotification", {
 
      Duration = 10
 })
-
-loadstring(game:HttpGet(""))()
